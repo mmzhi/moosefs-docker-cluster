@@ -1,8 +1,5 @@
 FROM ubuntu:16.04
 
-#开启 CGI Serv
-ADD moosefs-cgiserv /etc/default/moosefs-cgiserv
-
 # 添加运行脚本
 ADD start.sh /home/start.sh
 
@@ -16,6 +13,9 @@ RUN apt-get update && apt-get install -y wget lsb-release curl && \
 # 设置运行脚本
     chown root:root /home/start.sh && \
     chmod 700 /home/start.sh
+
+#开启 CGI Serv
+ADD moosefs-cgiserv /etc/default/moosefs-cgiserv
 
 # 设置配置文件
 ADD mfsmaster.cfg /etc/mfs/mfsmaster.cfg
