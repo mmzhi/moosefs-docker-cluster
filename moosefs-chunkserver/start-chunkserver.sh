@@ -1,4 +1,5 @@
 #!/bin/bash
+sed -i '/MFSCHUNKSERVER_ENABLE=false/c\MFSCHUNKSERVER_ENABLE=true' /etc/default/moosefs-chunkserver
 mfschunkserver start
 
 if [[ $1 == "-d" ]]; then

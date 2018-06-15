@@ -12,8 +12,7 @@ RUN apt-get update && apt-get install -y wget lsb-release curl && \
     apt-get update && apt-get install -y moosefs-chunkserver && \
 # 设置运行脚本
     chown root:root /home/start-chunkserver.sh && \
-    chmod 700 /home/start-chunkserver.sh && \
-    sed -i '/MFSCHUNKSERVER_ENABLE=false/c\MFSCHUNKSERVER_ENABLE=true' /etc/default/moosefs-chunkserver
+    chmod 700 /home/start-chunkserver.sh
 
 # 设置配置文件
 ADD mfschunkserver.cfg /etc/mfs/mfschunkserver.cfg
