@@ -12,10 +12,8 @@ RUN apt-get update && apt-get install -y wget lsb-release curl fuse libfuse2 tre
     apt-get update && apt-get install -y moosefs-client && \
 # 配置运行脚本
     chown root:root /home/start-client.sh && \
-    chmod 700 /home/start-client.sh
-
-RUN chown root:root /home/start-client.sh && \
-    chmod 700 /home/start-client.sh
+    chmod 700 /home/start-client.sh && \
+    mkdir /mnt/mfs
 
 # 添加配置文件
 ADD mfsmount.cfg /etc/mfs/mfsmount.cfg
